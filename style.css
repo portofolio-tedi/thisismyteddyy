@@ -13,6 +13,7 @@ body {
   padding: 20px;
 }
 
+/* HEADER */
 header {
   text-align: center;
   margin-bottom: 50px;
@@ -29,13 +30,14 @@ header p {
   color: #b0b0b0; /* abu-abu netral */
 }
 
+/* SERVICES / LAYANAN */
 .services {
   margin-bottom: 50px;
 }
 
 .services h2 {
   text-align: center;
-  color: #4da6ff; /* biru lembut modern */
+  color: #4da6ff; /* biru lembut */
   margin-bottom: 25px;
 }
 
@@ -66,9 +68,55 @@ header p {
 }
 
 .service-item p {
-  color: #d0d0d0; /* teks sedikit lebih terang */
+  color: #d0d0d0;
 }
 
+/* PORTFOLIO */
+.portfolio {
+  margin-bottom: 50px;
+}
+
+.portfolio h2 {
+  text-align: center;
+  color: #4da6ff; /* biru lembut */
+  margin-bottom: 25px;
+}
+
+.portfolio-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.portfolio-item {
+  background: #1e1e1e;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.portfolio-item p {
+  color: #d0d0d0;
+  padding: 10px 0;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* CONTACT / Tombol WA */
 .contact a {
   position: fixed;
   bottom: 20px;
@@ -87,31 +135,35 @@ header p {
   background: #218838; /* hijau lebih gelap saat hover */
 }
 
+/* FOOTER */
 footer {
   text-align: center;
   color: #777;
   margin-top: 20px;
 }
 
-/* Animasi */
+/* ANIMASI */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .service-list { gap: 15px; }
+  .portfolio-item { width: 45%; }
   header h1 { font-size: 2.2rem; }
   header p { font-size: 1rem; }
-  .services h2 { font-size: 1.8rem; }
+  .services h2, .portfolio h2 { font-size: 1.8rem; }
   .service-item { padding: 15px; }
 }
 
 @media (max-width: 480px) {
+  .service-list { gap: 10px; }
+  .portfolio-item { width: 100%; }
   header h1 { font-size: 1.8rem; }
   header p { font-size: 0.9rem; }
-  .services h2 { font-size: 1.5rem; }
+  .services h2, .portfolio h2 { font-size: 1.5rem; }
   .service-item h3 { font-size: 1.1rem; }
   .service-item p { font-size: 0.9rem; }
 }
