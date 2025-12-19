@@ -7,8 +7,8 @@
 }
 
 body {
-  background-color: #0e0e0e;
-  color: #fff;
+  background-color: #121212; /* background gelap elegan */
+  color: #e0e0e0; /* teks abu-abu terang */
   line-height: 1.6;
   padding: 20px;
 }
@@ -20,14 +20,13 @@ header {
 }
 
 header h1 {
-  color: #39ff14; /* neon hijau */
+  color: #ffffff; /* putih bersih */
   font-size: 3rem;
-  text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
 }
 
 header p {
   font-size: 1.2rem;
-  color: #ccc;
+  color: #b0b0b0; /* abu-abu netral */
 }
 
 .services {
@@ -36,7 +35,7 @@ header p {
 
 .services h2 {
   text-align: center;
-  color: #0ff; /* neon cyan */
+  color: #4da6ff; /* biru lembut modern */
   margin-bottom: 25px;
 }
 
@@ -47,11 +46,11 @@ header p {
 }
 
 .service-item {
-  background: #1a1a1a;
+  background: #1e1e1e; /* abu gelap */
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 0 15px rgba(255,255,255,0.1);
-  opacity: 0; /* awal tidak terlihat */
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  opacity: 0; 
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
@@ -62,27 +61,30 @@ header p {
 }
 
 .service-item h3 {
-  color: #0ff;
+  color: #4da6ff; /* biru lembut */
   margin-bottom: 10px;
+}
+
+.service-item p {
+  color: #d0d0d0; /* teks sedikit lebih terang */
 }
 
 .contact a {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  color: #0e0e0e;
-  background: #39ff14;
+  color: #ffffff;
+  background: #28a745; /* hijau lembut */
   padding: 12px 20px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
-  box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, background 0.3s;
 }
 
 .contact a:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 20px #39ff14, 0 0 40px #39ff14;
+  background: #218838; /* hijau lebih gelap saat hover */
 }
 
 footer {
