@@ -3,72 +3,105 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  background-color: #f5f5f5;
-  color: #333;
+  background-color: #0e0e0e; /* gelap biar neon menonjol */
+  color: #fff;
   line-height: 1.6;
   padding: 20px;
 }
 
 header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  animation: fadeIn 1s ease-in;
 }
 
 header h1 {
-  color: #0a74da;
-  font-size: 2.5rem;
+  color: #39ff14; /* neon hijau */
+  font-size: 3rem;
+  text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+  animation: glow 1.5s infinite alternate;
 }
 
 header p {
-  font-size: 1.1rem;
-  color: #555;
+  font-size: 1.2rem;
+  color: #ccc;
 }
 
 .services {
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 .services h2 {
   text-align: center;
-  color: #0a74da;
-  margin-bottom: 20px;
+  color: #ff3dff; /* neon pink */
+  text-shadow: 0 0 10px #ff3dff, 0 0 20px #ff3dff;
+  margin-bottom: 25px;
+  animation: glow 1.5s infinite alternate;
 }
 
 .service-list {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
 }
 
 .service-item {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px #39ff14;
 }
 
 .service-item h3 {
-  color: #0a74da;
+  color: #0ff; /* neon cyan */
   margin-bottom: 10px;
 }
 
 .contact {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .contact a {
-  color: #0a74da;
+  color: #ff3dff;
   text-decoration: none;
   font-weight: bold;
+  background: #1a1a1a;
+  padding: 10px 20px;
+  border-radius: 50px;
+  box-shadow: 0 0 10px #ff3dff, 0 0 20px #ff3dff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ff3dff, 0 0 40px #ff3dff;
 }
 
 footer {
   text-align: center;
   color: #777;
   margin-top: 20px;
+  animation: fadeIn 2s ease-in;
+}
+
+/* Animasi */
+@keyframes glow {
+  0% { text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14; }
+  100% { text-shadow: 0 0 20px #39ff14, 0 0 30px #39ff14; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
