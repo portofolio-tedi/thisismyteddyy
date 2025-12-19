@@ -24,3 +24,5 @@ function autoScroll(){
   requestAnimationFrame(autoScroll);
 }
 autoScroll();
+<script src="script.js"></script>
+</body>
