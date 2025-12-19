@@ -5,18 +5,22 @@ waButton.addEventListener("click", () => {
 });
 
 // Fade-in layanan saat scroll
-const services = document.querySelectorAll('.service-item');
+// Slider otomatis
+const slider = document.querySelector('.portfolio-slider');
+let scrollAmount = 0;
+const scrollPerTick = 1; // kecepatan scroll
+const sliderWidth = slider.scrollWidth - slider.clientWidth;
 
-function revealOnScroll() {
-  const triggerBottom = window.innerHeight * 0.85;
-
-  services.forEach(service => {
-    const serviceTop = service.getBoundingClientRect().top;
-    if(serviceTop < triggerBottom) {
-      service.classList.add('show');
-    }
-  });
+function autoScroll() {
+  scrollAmount += scrollPerTick;
+  if(scrollAmount >= sliderWidth) {
+    scrollAmount = 0; // kembali ke awal
+  }
+  slider.scrollLeft = scrollAmount;
+  requestAnimationFrame(autoScroll);
 }
+
+autoScroll();
 
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
