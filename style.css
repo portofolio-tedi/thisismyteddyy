@@ -1,4 +1,4 @@
-/* Reset dasar */
+/* Reset & dasar */
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #0e0e0e; /* gelap biar neon menonjol */
+  background-color: #0e0e0e;
   color: #fff;
   line-height: 1.6;
   padding: 20px;
@@ -23,7 +23,6 @@ header h1 {
   color: #39ff14; /* neon hijau */
   font-size: 3rem;
   text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
-  animation: glow 1.5s infinite alternate;
 }
 
 header p {
@@ -37,10 +36,8 @@ header p {
 
 .services h2 {
   text-align: center;
-  color: #ff3dff; /* neon pink */
-  text-shadow: 0 0 10px #ff3dff, 0 0 20px #ff3dff;
+  color: #0ff; /* neon cyan */
   margin-bottom: 25px;
-  animation: glow 1.5s infinite alternate;
 }
 
 .service-list {
@@ -54,54 +51,65 @@ header p {
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 0 15px rgba(255,255,255,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  opacity: 0; /* awal tidak terlihat */
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.service-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px #39ff14;
+.service-item.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .service-item h3 {
-  color: #0ff; /* neon cyan */
+  color: #0ff;
   margin-bottom: 10px;
 }
 
-.contact {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
 .contact a {
-  color: #ff3dff;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #0e0e0e;
+  background: #39ff14;
+  padding: 12px 20px;
+  border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
-  background: #1a1a1a;
-  padding: 10px 20px;
-  border-radius: 50px;
-  box-shadow: 0 0 10px #ff3dff, 0 0 20px #ff3dff;
+  box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .contact a:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 20px #ff3dff, 0 0 40px #ff3dff;
+  box-shadow: 0 0 20px #39ff14, 0 0 40px #39ff14;
 }
 
 footer {
   text-align: center;
   color: #777;
   margin-top: 20px;
-  animation: fadeIn 2s ease-in;
 }
 
 /* Animasi */
-@keyframes glow {
-  0% { text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14; }
-  100% { text-shadow: 0 0 20px #39ff14, 0 0 30px #39ff14; }
-}
-
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .service-list { gap: 15px; }
+  header h1 { font-size: 2.2rem; }
+  header p { font-size: 1rem; }
+  .services h2 { font-size: 1.8rem; }
+  .service-item { padding: 15px; }
+}
+
+@media (max-width: 480px) {
+  header h1 { font-size: 1.8rem; }
+  header p { font-size: 0.9rem; }
+  .services h2 { font-size: 1.5rem; }
+  .service-item h3 { font-size: 1.1rem; }
+  .service-item p { font-size: 0.9rem; }
 }
