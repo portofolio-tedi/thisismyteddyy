@@ -1,2 +1,5 @@
-// Bisa dipakai nanti untuk interaksi tambahan
-console.log("Website Jasa Tedi siap!");
+// Tombol WA efek klik
+const waButton = document.querySelector(".contact a");
+waButton.addEventListener("click", () => {
+  alert("Kamu akan diarahkan ke WhatsApp!");
+});
